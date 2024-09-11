@@ -30,10 +30,7 @@ orgs.newOrg('eclipse-linuxtools') {
       },
       secrets: [
         orgs.newRepoSecret('GITLAB_API_TOKEN') {
-          value: "********",
-        },
-        orgs.newRepoSecret('LINUXTOOLS_GITLAB_API_TOKEN') {
-          value: "********",
+          value: "pass:bots/tools.linuxtools/gitlab.eclipse.org/api-token",
         },
       ],
     },
