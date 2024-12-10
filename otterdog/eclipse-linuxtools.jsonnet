@@ -8,6 +8,19 @@ orgs.newOrg('eclipse-linuxtools') {
     },
   },
   _repositories+:: [
+    orgs.newRepo('eclipse-ide-snap') {
+      default_branch: "master",
+      delete_branch_on_merge: false,
+      description: "Eclipse IDE snap package source",
+      has_discussions: true,
+      homepage: "https://snapcraft.io/eclipse",
+      web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('STORE_LOGIN') {
+          value: "********",
+        },
+      ],
+    },
     orgs.newRepo('linuxtools-website') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -41,17 +54,6 @@ orgs.newOrg('eclipse-linuxtools') {
       web_commit_signoff_required: false,
       workflows+: {
         enabled: false,
-      },
-    },
-    orgs.newRepo('eclipse-ide-snap') {
-      default_branch: "master",
-      delete_branch_on_merge: false,
-      description: "Eclipse IDE snap package source",
-      has_discussions: true,
-      homepage: "https://snapcraft.io/eclipse",
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "read",
       },
     },
   ],
