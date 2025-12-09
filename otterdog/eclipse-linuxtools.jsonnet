@@ -17,7 +17,7 @@ orgs.newOrg('tools.linuxtools', 'eclipse-linuxtools') {
       web_commit_signoff_required: false,
       secrets: [
         orgs.newRepoSecret('STORE_LOGIN') {
-          value: "********",
+          value: "pass:bots/tools.linuxtools/snapcraft.io/STORE_LOGIN",
         },
       ],
     },
